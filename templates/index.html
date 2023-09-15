@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ガソリン代計算</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- PWAのメタデータ -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#465c5e">
+    <link rel="icon" href="/static/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+</head>
+<body>
+    <h1>ガソリン代計算</h1>
+
+    <h2>ガソリン代割り勘計算</h2>
+    <form method="POST" action="/">
+        <label for="input_value1">人数 ( 人 ) :</label>
+        <input type="text" id="input_value1" name="input_value1" required><br>
+
+        <label for="input_value2">単価 ( ¥ / L ) :</label>
+        <input type="text" id="input_value2" name="input_value2" required><br>
+
+        <label for="input_value3">燃費 ( km / L ) :</label>
+        <input type="text" id="input_value3" name="input_value3" required><br>
+
+        <label for="input_value3">走行距離 ( km ):</label>
+        <input type="text" id="input_value4" name="input_value4" required><br>
+        <input type="submit" value="計算">
+    </form>
+
+    {% if result %}
+        <h3>{{ result[0] }}</h3>
+        <h3>{{ result[1] }}</h3>
+    {% endif %}  
+
+
+    <div class="footer">
+        &copy; 2023 j21kobayashi
+    </div>
+
+    <script>
+        // スマホの場合のみ、入力欄を数値キーボードにする
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            var inputElements = document.querySelectorAll('input[type="text"]');
+            for (var i = 0; i < inputElements.length; i++) {
+                inputElements[i].setAttribute('inputmode', 'numeric');
+                inputElements[i].setAttribute('pattern', '[0-9]*');
+            }
+        }
+    </script>
+</body>
+</html>
