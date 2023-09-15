@@ -1,2 +1,2 @@
 # Fuel-Cost
-https://Fuel-Cost.azurewebsites.net/
+https://j21kapp-fuelcost.azurewebsites.net/
