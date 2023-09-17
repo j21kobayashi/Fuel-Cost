@@ -1,4 +1,2 @@
 Flask
 requests
-render_template
-request
