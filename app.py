@@ -29,7 +29,7 @@ def calculate2(x):
             x[i]=i_or_f(float(x[i]))
         cost=x[1]*x[3]/x[2]
         result2=[f"{x[0]}人,単価{x[1]}円/L,燃費{x[2]}km/L,走行距離{x[3]}km"]
-        result2.append(f"⇒総額{nfm3(round(cost))}円 , {x[0]}人で割ると1人当たり{nfm3(round(cost/float(x[0])))}円 ")
+        result2.append(f"⇒総額{nfm3(round(cost))}円 , {x[0]}人で割ると1人当たり{nfm3(round(cost/float(x[0]),1))}円 ")
     except:
         result2 = ["計算エラーが発生しました","すべての項目を数値で入力してください"]
     return result2
