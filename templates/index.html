@@ -48,7 +48,7 @@
             var inputElements = document.querySelectorAll('input[type="text"]');
             for (var i = 0; i < inputElements.length; i++) {
                 inputElements[i].setAttribute('inputmode', 'numeric');
-                inputElements[i].setAttribute('pattern', '[0-9]*');
+                inputElements[i].setAttribute('pattern', '[0-9]*[.]?[0-9]*');
             }
         }
     </script>
